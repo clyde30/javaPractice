@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Deck {
   List newDeck = new ArrayList();
-  List shuffledDeck = new ArrayList();
+  List shuffled = new ArrayList();
 
   public Deck() {
     String[] suitList = {"Hearts", "Clubs", "Spades", "Diamonds"};
@@ -13,20 +13,23 @@ public class Deck {
         newDeck.add(card);
       }
     }
-    shuffle();
+    // shuffled = shuffle(newDeck);
   }
 
-  public void shuffle() {
+  public List shuffle(List d) {
     System.out.println("Shuffling");
-    List<Card> deck = newDeck;
+    List<Card> deck = d;
+    List<Card> finalList = new ArrayList();
+
     while (0 < deck.size()){
       Random r = new Random();
 		  int i = r.nextInt(deck.size());
 
       Card card = deck.get(i);
-      card.printCard();
-      shuffledDeck.add(card);
+      // card.printCard();
+      finalList.add(card);
       deck.remove(i);
   }
+  return finalList;
 }
 }
