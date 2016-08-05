@@ -9,11 +9,12 @@ public class RunApp {
       Deck deckTwo = new Deck();
 
       List<Card> cardList = deck.newDeck;
-      List<Card> cardListTwo = deckTwo.newDeck;
+      // List<Card> cardListTwo = deckTwo.shuffled;
+      List<Card> shuffledDeck = deck.shuffle(cardList);
 
-      List<Card> cardListShuffled = deck.shuffle(cardList);
+      // List<Card> cardListShuffled = deck.shuffle(cardList);
 
-      for (Card card : cardListTwo) {
+      for (Card card : cardList) {
         card.printCard();
       }
     }
