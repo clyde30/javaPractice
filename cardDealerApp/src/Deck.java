@@ -18,7 +18,8 @@ public class Deck {
 
   public List shuffle(List d) {
     System.out.println("Shuffling");
-    List<Card> deck = d;
+    List<Card> deck = new ArrayList();
+    deck = d;
     List<Card> finalList = new ArrayList();
 
     while (0 < deck.size()){

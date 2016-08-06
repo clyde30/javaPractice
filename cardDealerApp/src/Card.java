@@ -12,7 +12,7 @@ public class Card {
   }
 
   public void printCard() {
-    System.out.println(name);
+    System.out.print(name);
   }
 
   public String getFaceCards(int value) {
