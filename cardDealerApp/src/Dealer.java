@@ -18,4 +18,22 @@ public class Dealer {
     }
     return hand;
     }
+
+    public List shuffle(List d) {
+      List<Card> deck = new ArrayList();
+      deck = d;
+      List<Card> finalList = new ArrayList();
+
+      while (0 < deck.size()){
+        Random r = new Random();
+        int i = r.nextInt(deck.size());
+
+        Card card = deck.get(i);
+        // card.printCard();
+        finalList.add(card);
+        deck.remove(i);
+    }
+    return finalList;
+  }
+
   }
