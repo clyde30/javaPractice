@@ -6,8 +6,8 @@ public class Dealer {
   public Dealer () {
   }
 
-  public List dealHand(List d, int i) {
-    List<Card> hand = new ArrayList();
+  public ArrayList dealHand(List d, int i) {
+    ArrayList<Card> hand = new ArrayList<Card>();
     List<Card> deck = new ArrayList();
     deck = d;
 

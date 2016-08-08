@@ -1,4 +1,4 @@
-public class Card {
+public class Card implements Comparable{
 
   String suit;
   int number;
@@ -7,8 +7,8 @@ public class Card {
 
   public Card(int number, String suit) {
     this.number = number;
+    this.value = number;
     this.suit = suit;
-
     this.name = getFaceCards(number) + " of " + suit;
   }
 
@@ -37,6 +37,16 @@ public class Card {
     }
 
     return card;
+  }
+
+  public int getNumber () {
+    return number;
+  }
+
+  @Override
+  public int compareTo(Card comparenumber) {
+    int comparenumber=((Card)comparenumber).getNumber();
+    return this.number - comparenumber;
   }
 
 }
