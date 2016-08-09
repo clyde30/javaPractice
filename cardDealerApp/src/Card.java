@@ -1,24 +1,25 @@
-public class Card {
+public class Card implements Comparable{
 
   String suit;
-  int value;
+  int number;
   String name;
+  int value;
 
-  public Card(int value, String suit) {
-    this.value = value;
+  public Card(int number, String suit) {
+    this.number = number;
+    this.value = number;
     this.suit = suit;
-
-    this.name = getFaceCards(value) + " of " + suit;
+    this.name = getFaceCards(number) + " of " + suit;
   }
 
   public void printCard() {
     System.out.println(name);
   }
 
-  public String getFaceCards(int value) {
+  public String getFaceCards(int number) {
     String card;
 
-    switch(value)
+    switch(number)
     {
       case 11 : card = "Jack";
       break;
@@ -32,10 +33,20 @@ public class Card {
       case 14 : card = "Ace";
       break;
 
-      default : card = Integer.toString(value);
+      default : card = Integer.toString(number);
     }
 
     return card;
+  }
+
+  public int getNumber () {
+    return number;
+  }
+
+  @Override
+  public int compareTo(Card comparenumber) {
+    int comparenumber=((Card)comparenumber).getNumber();
+    return this.number - comparenumber;
   }
 
 }

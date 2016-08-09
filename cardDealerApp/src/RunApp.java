@@ -9,10 +9,13 @@ public class RunApp {
       User user = new User();
       Deck deck = new Deck(user.numDecks);
       Dealer dealer = new Dealer();
+      ArrayList<Card> hand = new ArrayList<Card>();
 
       List<Card> unshuffledDeck = deck.deck;
       List<Card> shuffledDeck = dealer.shuffle(unshuffledDeck);
-      List<Card> hand = dealer.dealHand(shuffledDeck, user.numCards);
+      hand = dealer.dealHand(shuffledDeck, user.numCards);
+
+      Collections.sort(hand);
 
       for (Card card : hand) {
         card.printCard();
