@@ -41,21 +41,12 @@ public class Card implements Comparable<Card>{
     return card;
   }
 
-  // public int getNumber () {
-  //   return number;
-  // }
-  //
-  // public int compareTo(Card comparenumber) {
-  //   int compareNumber=((Card)compareNumber).getNumber();
-  //   return this.number - compareNumber;
-  // }
+  public int getNumber () {
+    return number;
+  }
 
-  public static class SortByNumber implements Comparator<Card> {
-
-        @Override
-        public int compare(Card c1, Card c2) {
-            return c1.number > c2.number ? 1 : (c1.number < c2.number ? -1 : 0);
-        }
-    }
-
+  public int compareTo(Card compareCard) {
+    int compareNumber=((Card)compareCard).getNumber();
+    return this.number - compareNumber;
+  }
 }
