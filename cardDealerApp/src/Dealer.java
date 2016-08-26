@@ -6,17 +6,17 @@ public class Dealer {
   public Dealer () {
   }
 
-  public ArrayList dealHand(List d, int i) {
-    ArrayList<Card> hand = new ArrayList<Card>();
+  public ArrayList dealCards(List d, int i) {
+    ArrayList<Card> cards = new ArrayList<Card>();
     List<Card> deck = new ArrayList();
     deck = d;
 
-    while (i > hand.size()) {
+    while (i > cards.size()) {
 
       Card card = deck.remove(0);
-      hand.add(card);
+      cards.add(card);
     }
-    return hand;
+    return cards;
     }
 
     public List shuffle(List d) {
@@ -29,10 +29,16 @@ public class Dealer {
         int i = r.nextInt(deck.size());
 
         Card card = deck.get(i);
-        // card.printCard();
         finalList.add(card);
         deck.remove(i);
     }
     return finalList;
+  }
+
+  public ArrayList removeCards(ArrayList hand, ArrayList<Integer> discards) {
+    for (Integer number : discards) {
+      hand.remove(number - 1);
+    }
+    return hand;
   }
 }

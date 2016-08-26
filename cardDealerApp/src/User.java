@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.*;
 
 public class User {
   int numCards;
@@ -24,5 +25,21 @@ public class User {
       n = user_input.nextInt();
     }
     return n;
+  }
+
+  public ArrayList<Integer> getDiscards() {
+    Scanner user_input = new Scanner( System.in );
+    ArrayList<Integer> discards = new ArrayList<Integer>();
+
+    System.out.println("How many cards would you like to discard?");
+    int n = user_input.nextInt();
+
+    while (n > discards.size()) {
+      System.out.println("Select a card to discard:");
+      int input = user_input.nextInt();
+      discards.add(input);
+    }
+    return discards;
+
   }
 }

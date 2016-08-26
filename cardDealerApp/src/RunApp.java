@@ -12,11 +12,21 @@ public class RunApp {
 
       List<Card> unshuffledDeck = _deck.deck;
       List<Card> shuffledDeck = dealer.shuffle(unshuffledDeck);
-      hand = dealer.dealHand(shuffledDeck, user.numCards);
+      hand = dealer.dealCards(shuffledDeck, user.numCards);
 
       Collections.sort(hand);
 
       for (Card card : hand) {
+        card.printCard();
+      }
+
+      ArrayList<Integer> discards = user.getDiscards();
+
+      ArrayList<Card> newHand = new ArrayList<Card>();
+      newHand = dealer.removeCards(hand, discards);
+
+      System.out.println("New Hand = ");
+      for (Card card : newHand) {
         card.printCard();
       }
     }
