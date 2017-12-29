@@ -1,7 +1,8 @@
 *.class
-cardDealerApp/src/*.class
+**/src/*.class
 *.DS_Store
-dealer/.classpath
-dealer/.settings/*
-dealer/.vscode/*
-dealer/target/*
+**/.classpath
+**/.settings/*
+**/.vscode/*
+**/target/*
+**/.project
